@@ -42,5 +42,5 @@ func TestParse(t *testing.T) {
 	assert.Equal(t, links[0].Href, "https://www.twitter.com/joncalhoun")
 	assert.Equal(t, links[0].Text, "Check me out on twitter")
 	assert.Equal(t, links[1].Href, "https://github.com/gophercises")
-	assert.Equal(t, links[1].Text, "Gophercises is onGithub!")
+	assert.Equal(t, links[1].Text, "Gophercises is on Github!")
 }

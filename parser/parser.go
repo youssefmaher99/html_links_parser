@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"fmt"
 	"io"
 	"strings"
 
@@ -24,7 +25,7 @@ func findElementInTree(node *html.Node, elments_arr *[]*html.Node, element strin
 func findInTextNode(node *html.Node, text_arr *string) {
 	for c := node.FirstChild; c != nil; c = c.NextSibling {
 		if c.Type == html.TextNode {
-			data := strings.Trim(c.Data, "\t\n ")
+			data := c.Data
 			*text_arr += data
 		}
 		findInTextNode(c, text_arr)
@@ -51,6 +52,8 @@ func Parse(document io.Reader) ([]Link, error) {
 	for i := 0; i < len(anchors_arr); i++ {
 		str := ""
 		findInTextNode(anchors_arr[i], &str)
+		str = strings.Join(strings.Fields(str), " ")
+		fmt.Println(str)
 		links[i].Text = str
 	}
 
