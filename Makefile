@@ -3,3 +3,6 @@ build:
 
 run: build
 	./main
+
+test:
+	go test -v ./...

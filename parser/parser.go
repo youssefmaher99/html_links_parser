@@ -1,7 +1,6 @@
 package parser
 
 import (
-	"fmt"
 	"io"
 	"strings"
 
@@ -53,7 +52,6 @@ func Parse(document io.Reader) ([]Link, error) {
 		str := ""
 		findInTextNode(anchors_arr[i], &str)
 		str = strings.Join(strings.Fields(str), " ")
-		fmt.Println(str)
 		links[i].Text = str
 	}
 

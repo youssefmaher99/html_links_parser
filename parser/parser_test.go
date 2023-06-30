@@ -1,7 +1,6 @@
 package parser
 
 import (
-	"fmt"
 	"os"
 	"strings"
 	"testing"
@@ -32,7 +31,6 @@ func TestParse(t *testing.T) {
 	file := "../ex2.html"
 
 	fopen, err := os.Open(file)
-	fmt.Println(fopen)
 	assert.Nil(t, err)
 
 	links, err := Parse(fopen)
