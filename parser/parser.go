@@ -25,8 +25,7 @@ func findInTextNode(node *html.Node, text_arr *string) {
 	for c := node.FirstChild; c != nil; c = c.NextSibling {
 		if c.Type == html.TextNode {
 			data := strings.Trim(c.Data, "\t\n ")
-			// fmt.Println(data)
-			*text_arr += " " + data
+			*text_arr += data
 		}
 		findInTextNode(c, text_arr)
 	}
